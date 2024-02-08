@@ -1216,6 +1216,12 @@
           "disabled": true,
           "fileExtension": "docx",
           "component": "app.components.tabs.comments"
+        },
+        {
+          "id": "app.viewer.aev",
+          "disabled": false,
+          "component": "app.components.enterprise-viewer",
+          "fileExtension": "*"
         }
       ]
     },
@@ -1451,17 +1457,156 @@
               "settings": {
                 "field": "content.size,cm:name",
                 "fileExtensions": [
-                  "3g2", "3gp", "acp", "aep", "ai", "aiff", "apk", "arw", "avi", "bin", "bmp", "cgm", "class", "cr2",
-                  "css", "csv", "dita", "dng", "doc", "docm", "docx", "dotm","dwg", "dwt", "eps", "flac", "flv", "fm",
-                  "fodg", "gif", "gtar", "gz", "htm", "html", "icns", "ics", "ief", "indd", "jar", "java", "jp2", "jpeg",
-                  "jpg", "js", "json", "jsp", "m4v", "man", "md", "mov", "mp3", "mp4", "mpeg", "mpp", "mrw", "msg", "nef",
-                  "numbers", "odb", "odf", "odg", "odi", "odm", "odp", "ods", "odt", "oga", "ogg", "ogv", "ogx", "orf",
-                  "ott", "pages", "pbm", "pdf", "pef", "pgm", "pmd", "png", "pnm", "pot", "potx", "ppam", "ppj", "pps",
-                  "ppsm", "ppt", "pptm", "pptx", "ps", "psd", "rad", "raf", "rar", "rgb", "rss", "rtf", "rw2", "rwl",
-                  "sda", "sdc", "sdd", "sdp", "sds", "sdw", "sgi", "sgl", "sgml", "sh", "sldm", "smf", "stw", "svg",
-                  "swf", "sxi", "tar", "tex", "texi", "tif", "tiff", "ts", "tsv", "txt", "vsd", "vsdm", "vsdx", "vssm",
-                  "vstm", "vstx", "wav", "webm", "wma", "wmv", "wpd", "wrl", "x3f", "xdp", "xhtml", "xla", "xlam", "xls",
-                  "xlsb", "xlsm", "xlsx", "xltm", "xml", "xpm", "xwd", "z", "zip"
+                  "3g2",
+                  "3gp",
+                  "acp",
+                  "aep",
+                  "ai",
+                  "aiff",
+                  "apk",
+                  "arw",
+                  "avi",
+                  "bin",
+                  "bmp",
+                  "cgm",
+                  "class",
+                  "cr2",
+                  "css",
+                  "csv",
+                  "dita",
+                  "dng",
+                  "doc",
+                  "docm",
+                  "docx",
+                  "dotm",
+                  "dwg",
+                  "dwt",
+                  "eps",
+                  "flac",
+                  "flv",
+                  "fm",
+                  "fodg",
+                  "gif",
+                  "gtar",
+                  "gz",
+                  "htm",
+                  "html",
+                  "icns",
+                  "ics",
+                  "ief",
+                  "indd",
+                  "jar",
+                  "java",
+                  "jp2",
+                  "jpeg",
+                  "jpg",
+                  "js",
+                  "json",
+                  "jsp",
+                  "m4v",
+                  "man",
+                  "md",
+                  "mov",
+                  "mp3",
+                  "mp4",
+                  "mpeg",
+                  "mpp",
+                  "mrw",
+                  "msg",
+                  "nef",
+                  "numbers",
+                  "odb",
+                  "odf",
+                  "odg",
+                  "odi",
+                  "odm",
+                  "odp",
+                  "ods",
+                  "odt",
+                  "oga",
+                  "ogg",
+                  "ogv",
+                  "ogx",
+                  "orf",
+                  "ott",
+                  "pages",
+                  "pbm",
+                  "pdf",
+                  "pef",
+                  "pgm",
+                  "pmd",
+                  "png",
+                  "pnm",
+                  "pot",
+                  "potx",
+                  "ppam",
+                  "ppj",
+                  "pps",
+                  "ppsm",
+                  "ppt",
+                  "pptm",
+                  "pptx",
+                  "ps",
+                  "psd",
+                  "rad",
+                  "raf",
+                  "rar",
+                  "rgb",
+                  "rss",
+                  "rtf",
+                  "rw2",
+                  "rwl",
+                  "sda",
+                  "sdc",
+                  "sdd",
+                  "sdp",
+                  "sds",
+                  "sdw",
+                  "sgi",
+                  "sgl",
+                  "sgml",
+                  "sh",
+                  "sldm",
+                  "smf",
+                  "stw",
+                  "svg",
+                  "swf",
+                  "sxi",
+                  "tar",
+                  "tex",
+                  "texi",
+                  "tif",
+                  "tiff",
+                  "ts",
+                  "tsv",
+                  "txt",
+                  "vsd",
+                  "vsdm",
+                  "vsdx",
+                  "vssm",
+                  "vstm",
+                  "vstx",
+                  "wav",
+                  "webm",
+                  "wma",
+                  "wmv",
+                  "wpd",
+                  "wrl",
+                  "x3f",
+                  "xdp",
+                  "xhtml",
+                  "xla",
+                  "xlam",
+                  "xls",
+                  "xlsb",
+                  "xlsm",
+                  "xlsx",
+                  "xltm",
+                  "xml",
+                  "xpm",
+                  "xwd",
+                  "z",
+                  "zip"
                 ]
               }
             }
@@ -1494,7 +1639,12 @@
                 "hideDefaultAction": true,
                 "allowOnlyPredefinedValues": false,
                 "field": "SITE",
-                "autocompleteOptions": [ { "value": "_REPOSITORY_", "query": "PATH:'/app:company_home/\/*'" } ]
+                "autocompleteOptions": [
+                  {
+                    "value": "_REPOSITORY_",
+                    "query": "PATH:'/app:company_home//*'"
+                  }
+                ]
               }
             }
           },
@@ -1540,7 +1690,21 @@
         "name": "APP.BROWSE.SEARCH.DUBLIN_CORE",
         "default": false,
         "filterWithContains": true,
-        "aca:fields": ["cm:name", "cm:title", "cm:description", "cm:identifier", "cm:contributor", "cm:coverage", "cm:dcsource", "cm:publisher", "cm:rights", "cm:subject", "cm:type", "TEXT", "TAG"],
+        "aca:fields": [
+          "cm:name",
+          "cm:title",
+          "cm:description",
+          "cm:identifier",
+          "cm:contributor",
+          "cm:coverage",
+          "cm:dcsource",
+          "cm:publisher",
+          "cm:rights",
+          "cm:subject",
+          "cm:type",
+          "TEXT",
+          "TAG"
+        ],
         "include": ["path", "allowableOperations", "properties"],
         "sorting": {
           "options": [
@@ -1585,7 +1749,9 @@
         "aca:triggeredOnChange": false,
         "resetButton": true,
         "filterQueries": [
-          { "query": "+TYPE:'cm:folder' OR +TYPE:'cm:content' AND +ASPECT:'cm:dublincore'" },
+          {
+            "query": "+TYPE:'cm:folder' OR +TYPE:'cm:content' AND +ASPECT:'cm:dublincore'"
+          },
           {
             "query": "-TYPE:'cm:thumbnail' AND -TYPE:'cm:failedThumbnail' AND -TYPE:'cm:rating'"
           },
@@ -1639,7 +1805,6 @@
                 "hideDefaultAction": true
               }
             }
-
           ]
         },
         "categories": [
@@ -1696,7 +1861,16 @@
         "name": "APP.BROWSE.SEARCH.EFFECTIVITY",
         "default": false,
         "filterWithContains": true,
-        "aca:fields": ["cm:name", "cm:title", "cm:description", "cm:from", "cm:contributor", "cm:to", "TEXT", "TAG"],
+        "aca:fields": [
+          "cm:name",
+          "cm:title",
+          "cm:description",
+          "cm:from",
+          "cm:contributor",
+          "cm:to",
+          "TEXT",
+          "TAG"
+        ],
         "include": ["path", "allowableOperations", "properties"],
         "sorting": {
           "options": [
@@ -1741,7 +1915,9 @@
         "aca:triggeredOnChange": false,
         "resetButton": true,
         "filterQueries": [
-          { "query": "+TYPE:'cm:folder' OR +TYPE:'cm:content' AND +ASPECT:'cm:effectivity'" },
+          {
+            "query": "+TYPE:'cm:folder' OR +TYPE:'cm:content' AND +ASPECT:'cm:effectivity'"
+          },
           {
             "query": "-TYPE:'cm:thumbnail' AND -TYPE:'cm:failedThumbnail' AND -TYPE:'cm:rating'"
           },
@@ -1848,7 +2024,6 @@
           }
         ]
       }
-
     ],
     "content-metadata-presets": [
       {
@@ -2114,10 +2289,7 @@
               {
                 "id": "app.content.metadata.effectivityAspect",
                 "aspect": "cm:effectivity",
-                "properties": [
-                  "cm:from",
-                  "cm:to"
-                ]
+                "properties": ["cm:from", "cm:to"]
               }
             ]
           }

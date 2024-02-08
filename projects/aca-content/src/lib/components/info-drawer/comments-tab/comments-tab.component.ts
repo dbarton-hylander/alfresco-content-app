@@ -39,11 +39,16 @@ export class CommentsTabComponent implements OnInit {
   @Input()
   node: Node;
 
+  @Input()
+  url: string;
+
   canUpdateNode = false;
 
   constructor(private permission: NodePermissionService) {}
 
   ngOnInit(): void {
+    console.info(`url`, this.url);
+
     if (!this.node) {
       this.canUpdateNode = false;
     }

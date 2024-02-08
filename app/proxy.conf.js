@@ -12,8 +12,9 @@ module.exports = {
         "changeOrigin": true,
         'logLevel': 'debug',
         onProxyReq: function(request) {
-          if(request["method"] !== "GET")
-          request.setHeader("origin", BASE_URL);
+          if(request["method"] !== "GET") {
+            request.setHeader("origin", BASE_URL);
+          }
         },
         // workaround for REPO-2260
         onProxyRes: function (proxyRes) {
@@ -22,5 +23,10 @@ module.exports = {
               proxyRes.headers['www-authenticate'] = 'x' + header;
           }
       }
+    },
+    "/OpenAnnotate": {
+      target: "http://localhost:8080",
+      changeOrigin: true,
+      secure: false
     }
 };

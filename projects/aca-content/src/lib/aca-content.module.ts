@@ -86,6 +86,7 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
 import { TrashcanComponent } from './components/trashcan/trashcan.component';
 import { SharedLinkViewComponent } from './components/shared-link-view/shared-link-view.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { EnterpriseViewer } from './components/enterprise-viewer/enterprise-viewer.component';
 
 @NgModule({
   imports: [
@@ -153,6 +154,7 @@ export class ContentServiceExtensionModule {
       'app.components.tabs.metadata': MetadataTabComponent,
       'app.components.tabs.library.metadata': LibraryMetadataTabComponent,
       'app.components.tabs.comments': CommentsTabComponent,
+      'app.components.enterprise-viewer': EnterpriseViewer,
       'app.components.tabs.versions': VersionsTabComponent,
       'app.components.preview': PreviewComponent,
       'app.toolbar.toggleInfoDrawer': ToggleInfoDrawerComponent,
