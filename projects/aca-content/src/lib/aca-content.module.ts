@@ -22,71 +22,84 @@
  * from Hyland Software. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { HammerModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TRANSLATION_PROVIDER, AuthGuardEcm, LanguagePickerComponent, NotificationHistoryComponent } from '@alfresco/adf-core';
+import { HammerModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import {
+  TRANSLATION_PROVIDER,
+  AuthGuardEcm,
+  LanguagePickerComponent,
+  NotificationHistoryComponent,
+} from '@alfresco/adf-core'
 import {
   ContentModule,
   ContentVersionService,
   LibraryNameColumnComponent,
   LibraryRoleColumnComponent,
   LibraryStatusColumnComponent,
-  TrashcanNameColumnComponent
-} from '@alfresco/adf-content-services';
-import { DocumentBasePageService, ExtensionsDataLoaderGuard, GenericErrorComponent, OpenInAppComponent } from '@alfresco/aca-shared';
-import * as rules from '@alfresco/aca-shared/rules';
-import { FilesComponent } from './components/files/files.component';
-import { LibrariesComponent } from './components/libraries/libraries.component';
-import { FavoriteLibrariesComponent } from './components/favorite-libraries/favorite-libraries.component';
-import { AppStoreModule } from './store/app-store.module';
-import { CoreExtensionsModule } from './extensions/core.extensions.module';
-import { AppInfoDrawerModule } from './components/info-drawer/info.drawer.module';
-import { ExtensionService, ExtensionsModule } from '@alfresco/adf-extensions';
-import { APP_TOOLBAR_DIRECTIVES } from './components/toolbar';
-import { APP_SIDENAV_DIRECTIVES } from './components/sidenav';
-import { APP_COMMON_DIRECTIVES } from './components/common';
-import { APP_SEARCH_DIRECTIVES } from './components/search';
-import { FavoritesComponent } from './components/favorites/favorites.component';
-import { RecentFilesComponent } from './components/recent-files/recent-files.component';
-import { SharedFilesComponent } from './components/shared-files/shared-files.component';
-import { CreateFromTemplateDialogComponent } from './dialogs/node-template/create-from-template.dialog';
-import { DetailsComponent } from './components/details/details.component';
-import { ContentUrlService } from './services/content-url.service';
-import { HomeComponent } from './components/home/home.component';
-import { CommonModule } from '@angular/common';
-import { LocationLinkComponent } from './components/common/location-link/location-link.component';
-import { LogoutComponent } from './components/common/logout/logout.component';
-import { ToggleSharedComponent } from './components/common/toggle-shared/toggle-shared.component';
-import { CustomNameColumnComponent } from './components/dl-custom-components/name-column/name-column.component';
-import { CommentsTabComponent } from './components/info-drawer/comments-tab/comments-tab.component';
-import { LibraryMetadataTabComponent } from './components/info-drawer/library-metadata-tab/library-metadata-tab.component';
-import { MetadataTabComponent } from './components/info-drawer/metadata-tab/metadata-tab.component';
-import { VersionsTabComponent } from './components/info-drawer/versions-tab/versions-tab.component';
-import { PreviewComponent } from '@alfresco/aca-content/preview';
-import { ToggleEditOfflineComponent } from './components/toolbar/toggle-edit-offline/toggle-edit-offline.component';
-import { ToggleFavoriteLibraryComponent } from './components/toolbar/toggle-favorite-library/toggle-favorite-library.component';
-import { ToggleFavoriteComponent } from './components/toolbar/toggle-favorite/toggle-favorite.component';
-import { ToggleInfoDrawerComponent } from './components/toolbar/toggle-info-drawer/toggle-info-drawer.component';
-import { ToggleJoinLibraryButtonComponent } from './components/toolbar/toggle-join-library/toggle-join-library-button.component';
-import { ToggleJoinLibraryMenuComponent } from './components/toolbar/toggle-join-library/toggle-join-library-menu.component';
-import { ViewNodeComponent } from './components/toolbar/view-node/view-node.component';
-import { CONTENT_ROUTES } from './aca-content.routes';
-import { RouterModule } from '@angular/router';
-import { UploadFilesDialogComponent } from './components/upload-files-dialog/upload-files-dialog.component';
-import { AcaFolderRulesModule } from '@alfresco/aca-content/folder-rules';
-import { TagsColumnComponent } from './components/dl-custom-components/tags-column/tags-column.component';
-import { UserInfoComponent } from './components/common/user-info/user-info.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ContentManagementService } from './services/content-management.service';
-import { ShellLayoutComponent, SHELL_NAVBAR_MIN_WIDTH } from '@alfresco/adf-core/shell';
-import { UserMenuComponent } from './components/sidenav/user-menu/user-menu.component';
-import { ContextMenuComponent } from './components/context-menu/context-menu.component';
-import { ViewProfileComponent } from './components/view-profile/view-profile.component';
-import { TrashcanComponent } from './components/trashcan/trashcan.component';
-import { SharedLinkViewComponent } from './components/shared-link-view/shared-link-view.component';
-import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import { EnterpriseViewer } from './components/enterprise-viewer/enterprise-viewer.component';
+  TrashcanNameColumnComponent,
+} from '@alfresco/adf-content-services'
+import {
+  DocumentBasePageService,
+  ExtensionsDataLoaderGuard,
+  GenericErrorComponent,
+  OpenInAppComponent,
+} from '@alfresco/aca-shared'
+import * as rules from '@alfresco/aca-shared/rules'
+import { FilesComponent } from './components/files/files.component'
+import { LibrariesComponent } from './components/libraries/libraries.component'
+import { FavoriteLibrariesComponent } from './components/favorite-libraries/favorite-libraries.component'
+import { AppStoreModule } from './store/app-store.module'
+import { CoreExtensionsModule } from './extensions/core.extensions.module'
+import { AppInfoDrawerModule } from './components/info-drawer/info.drawer.module'
+import { ExtensionService, ExtensionsModule } from '@alfresco/adf-extensions'
+import { APP_TOOLBAR_DIRECTIVES } from './components/toolbar'
+import { APP_SIDENAV_DIRECTIVES } from './components/sidenav'
+import { APP_COMMON_DIRECTIVES } from './components/common'
+import { APP_SEARCH_DIRECTIVES } from './components/search'
+import { FavoritesComponent } from './components/favorites/favorites.component'
+import { RecentFilesComponent } from './components/recent-files/recent-files.component'
+import { SharedFilesComponent } from './components/shared-files/shared-files.component'
+import { CreateFromTemplateDialogComponent } from './dialogs/node-template/create-from-template.dialog'
+import { DetailsComponent } from './components/details/details.component'
+import { ContentUrlService } from './services/content-url.service'
+import { HomeComponent } from './components/home/home.component'
+import { CommonModule } from '@angular/common'
+import { LocationLinkComponent } from './components/common/location-link/location-link.component'
+import { LogoutComponent } from './components/common/logout/logout.component'
+import { ToggleSharedComponent } from './components/common/toggle-shared/toggle-shared.component'
+import { CustomNameColumnComponent } from './components/dl-custom-components/name-column/name-column.component'
+import { CommentsTabComponent } from './components/info-drawer/comments-tab/comments-tab.component'
+import { LibraryMetadataTabComponent } from './components/info-drawer/library-metadata-tab/library-metadata-tab.component'
+import { MetadataTabComponent } from './components/info-drawer/metadata-tab/metadata-tab.component'
+import { VersionsTabComponent } from './components/info-drawer/versions-tab/versions-tab.component'
+import { PreviewComponent } from '@alfresco/aca-content/preview'
+import { ToggleEditOfflineComponent } from './components/toolbar/toggle-edit-offline/toggle-edit-offline.component'
+import { ToggleFavoriteLibraryComponent } from './components/toolbar/toggle-favorite-library/toggle-favorite-library.component'
+import { ToggleFavoriteComponent } from './components/toolbar/toggle-favorite/toggle-favorite.component'
+import { ToggleInfoDrawerComponent } from './components/toolbar/toggle-info-drawer/toggle-info-drawer.component'
+import { ToggleJoinLibraryButtonComponent } from './components/toolbar/toggle-join-library/toggle-join-library-button.component'
+import { ToggleJoinLibraryMenuComponent } from './components/toolbar/toggle-join-library/toggle-join-library-menu.component'
+import { ViewNodeComponent } from './components/toolbar/view-node/view-node.component'
+import { CONTENT_ROUTES } from './aca-content.routes'
+import { RouterModule } from '@angular/router'
+import { UploadFilesDialogComponent } from './components/upload-files-dialog/upload-files-dialog.component'
+import { AcaFolderRulesModule } from '@alfresco/aca-content/folder-rules'
+import { TagsColumnComponent } from './components/dl-custom-components/tags-column/tags-column.component'
+import { UserInfoComponent } from './components/common/user-info/user-info.component'
+import { SidenavComponent } from './components/sidenav/sidenav.component'
+import { ContentManagementService } from './services/content-management.service'
+import {
+  ShellLayoutComponent,
+  SHELL_NAVBAR_MIN_WIDTH,
+} from '@alfresco/adf-core/shell'
+import { UserMenuComponent } from './components/sidenav/user-menu/user-menu.component'
+import { ContextMenuComponent } from './components/context-menu/context-menu.component'
+import { ViewProfileComponent } from './components/view-profile/view-profile.component'
+import { TrashcanComponent } from './components/trashcan/trashcan.component'
+import { SharedLinkViewComponent } from './components/shared-link-view/shared-link-view.component'
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog'
+// import { EnterpriseViewer } from './components/enterprise-viewer/enterprise-viewer.component'
 
 @NgModule({
   imports: [
@@ -120,7 +133,7 @@ import { EnterpriseViewer } from './components/enterprise-viewer/enterprise-view
     RecentFilesComponent,
     LibrariesComponent,
     HomeComponent,
-    UploadFilesDialogComponent
+    UploadFilesDialogComponent,
   ],
   providers: [
     { provide: ContentVersionService, useClass: ContentUrlService },
@@ -130,22 +143,22 @@ import { EnterpriseViewer } from './components/enterprise-viewer/enterprise-view
       multi: true,
       useValue: {
         name: 'app',
-        source: 'assets'
-      }
+        source: 'assets',
+      },
     },
     { provide: SHELL_NAVBAR_MIN_WIDTH, useValue: 0 },
     {
       provide: MAT_DIALOG_DEFAULT_OPTIONS,
-      useValue: { closeOnNavigation: true, hasBackdrop: true, autoFocus: true }
-    }
-  ]
+      useValue: { closeOnNavigation: true, hasBackdrop: true, autoFocus: true },
+    },
+  ],
 })
 export class ContentServiceExtensionModule {
   constructor(public extensions: ExtensionService) {
     extensions.setAuthGuards({
       'app.auth': AuthGuardEcm,
-      'app.extensions.dataLoaderGuard': ExtensionsDataLoaderGuard
-    });
+      'app.extensions.dataLoaderGuard': ExtensionsDataLoaderGuard,
+    })
 
     extensions.setComponents({
       'app.layout.main': ShellLayoutComponent,
@@ -154,7 +167,7 @@ export class ContentServiceExtensionModule {
       'app.components.tabs.metadata': MetadataTabComponent,
       'app.components.tabs.library.metadata': LibraryMetadataTabComponent,
       'app.components.tabs.comments': CommentsTabComponent,
-      'app.components.enterprise-viewer': EnterpriseViewer,
+      // 'app.components.enterprise-viewer': EnterpriseViewer,
       'app.components.tabs.versions': VersionsTabComponent,
       'app.components.preview': PreviewComponent,
       'app.toolbar.toggleInfoDrawer': ToggleInfoDrawerComponent,
@@ -176,8 +189,8 @@ export class ContentServiceExtensionModule {
       'app.logout': LogoutComponent,
       'app.user': UserInfoComponent,
       'app.notification-center': NotificationHistoryComponent,
-      'app.user.menu': UserMenuComponent
-    });
+      'app.user.menu': UserMenuComponent,
+    })
 
     extensions.setEvaluators({
       canCopyNode: rules.canCopyNode,
@@ -250,7 +263,7 @@ export class ContentServiceExtensionModule {
       'app.canCreateLibrary': rules.canCreateLibrary,
       'app.isSearchSupported': rules.isSearchSupported,
       'app.areTagsEnabled': rules.areTagsEnabled,
-      'app.areCategoriesEnabled': rules.areCategoriesEnabled
-    });
+      'app.areCategoriesEnabled': rules.areCategoriesEnabled,
+    })
   }
 }
